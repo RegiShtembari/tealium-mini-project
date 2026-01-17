@@ -33,4 +33,7 @@ public class HomePage extends BasePage {
         actions.moveToElement(driver.findElement(By.linkText(mainCategory))).perform();
         wait.waitForElementClickable(By.linkText(subCategory)).click();
     }
+    public void click_x(){
+        wait.waitForElementClickable(By.id("tealiumlabs_retail-21_inquiry5667_closeButton")).click();
+    }
 }

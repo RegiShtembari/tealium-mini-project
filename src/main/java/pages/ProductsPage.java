@@ -5,7 +5,7 @@ import org.openqa.selenium.*;
 import java.util.List;
 
 public class ProductsPage extends BasePage {
-    private By productBox = By.id("product-collection-image-428");
+    private By productBox = By.xpath("(//div[@class='category-products']//a)[3]");
     private By oldPrice = By.className("old-price");
     private By specialPrice = By.className("special-price");
     private By sortSelect = By.cssSelector("select[title='Sort By']");
