@@ -16,7 +16,7 @@ public class SortingTest extends BaseTest {
         HomePage home = new HomePage(driver);
         home.navigateToMenu("WOMEN", "View All Women");
         home.click_x();
-
+        //
         ProductsPage products = new ProductsPage(driver);
         products.sortByPrice();
 
