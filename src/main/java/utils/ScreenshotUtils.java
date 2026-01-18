@@ -13,7 +13,6 @@ public class ScreenshotUtils {
         String fileName = screenshotName + "_" + System.currentTimeMillis() + ".png";
         String directoryPath = System.getProperty("user.dir") + "/Files/Screenshots/";
 
-        // ADD THIS: Ensure the folder exists
         File directory = new File(directoryPath);
         if (!directory.exists()) {
             directory.mkdirs();

@@ -19,7 +19,6 @@ public class HoverStyleTest extends BaseTest {
         ProductsPage products = new ProductsPage(driver);
         products.hoverFirstProduct();
 
-        // Assert style change - typically hover changes box-shadow, border, or opacity
         String shadow = products.getProductBoxStyle("border-color");
         Assert.assertNotEquals(shadow, "none", "Hover effect style (shadow) did not trigger!");
     }

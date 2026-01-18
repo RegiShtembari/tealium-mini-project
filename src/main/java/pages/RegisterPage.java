@@ -31,7 +31,6 @@ public class RegisterPage extends BasePage {
 
     public void rememberMeBtnClick() {
         WebElement element = driver.findElement(rememberBtn);
-        // Scroll the element into the center of the viewport
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
         element.click();
     }

@@ -9,7 +9,6 @@ public class LoginPage extends BasePage {
     private By loginBtn = By.id("send2");
     private By welcomeMsg = By.className("page-title"); // "My Dashboard" text
 
-    // New locator for the username in the top right header
     private By headerUsername = By.cssSelector(".welcome-msg");
 
     public LoginPage(WebDriver driver) {
@@ -29,7 +28,6 @@ public class LoginPage extends BasePage {
         return wait.waitForElementVisible(welcomeMsg).getText();
     }
 
-    // New method to fulfill Requirement #4
     public String getHeaderText() {
         return wait.waitForElementVisible(headerUsername).getText();
     }

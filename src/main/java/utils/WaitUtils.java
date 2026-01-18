@@ -10,7 +10,6 @@ import java.time.Duration;
 public class WaitUtils {
     private WebDriverWait wait;
 
-    // This constructor was likely missing or empty!
     public WaitUtils(WebDriver driver, int timeoutInSeconds) {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
     }
