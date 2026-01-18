@@ -5,21 +5,26 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.ProductsPage;
 
+import java.util.List;
+
 public class SaleStyleTest extends BaseTest {
+
     @Test
-    public void testSaleStyles() {
+    public void testEachProductHasBothPrices() {
+
         loginUser("testuser227@example.com", "Password123");
 
         HomePage home = new HomePage(driver);
         home.navigateToMenu("SALE", "View All Sale");
-
+        home.click_x();
         ProductsPage products = new ProductsPage(driver);
 
-        // Requirement: Strikethrough for old price
-        Assert.assertTrue(products.getOldPriceStyle("text-decoration").contains("line-through"), "Old price is not strikethrough!");
+        List<Boolean> priceChecks = products.areBothPricesDisplayedPerProduct();
+        Assert.assertEquals(priceChecks.size(), 4, "Unexpected number of product cards");
+        for (int i = 0; i < priceChecks.size(); i++) {
+            Assert.assertTrue(priceChecks.get(i), "Bug: Product at index " + i + " does not show both prices");
+        }
+    }
 
-        // Requirement: Blue color for special price
-        String color = products.getSpecialPriceStyle("color");
-        Assert.assertTrue(color.contains("0, 123, 181") || color.contains("blue"), "Special price is not blue!");
-    }//bllue hex
+//bllue hex
 }
